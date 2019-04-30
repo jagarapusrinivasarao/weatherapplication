@@ -1,0 +1,23 @@
+<div class="currentWeatherM">
+  <div class="container">
+   <div *ngIf="myWeather">
+     <h1>{{myWeather.cityName}}</h1>
+     <h2>{{myWeather.temp}}&deg;</h2>
+     <div class="img-responsive">
+      <!-- http://openweathermap.org/img/w/10d.png -->
+      <img src="{{'http://openweathermap.org/img/w/'+myWeather.icon+'.png'}}">
+     </div>
+     <h3>{{myWeather.weatherKind}}</h3>
+     <h4>Max:{{myWeather.tempMax}}&deg;</h4>
+     <h4>Min:{{myWeather.tempMin}}&deg;</h4>
+   </div>
+   <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+      <div class="formmain form-inline">
+        <div class="form-group">
+         <input class="form-control" ngModel  name="City" type="text" placeholder="Enter Name Of City">
+         <button class="btn btn-success ml-1" name="button"><i class="fa fa-question-circle"></i>  Search</button>
+        </div>
+      </div>
+   </form>
+  </div>
+</div>

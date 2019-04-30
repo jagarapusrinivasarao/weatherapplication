@@ -1,0 +1,28 @@
+<div class="forecastMain">
+  <div class="container">
+     <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+       <div class="formmain form-inline">
+         <div class="form-group">
+            <input class="form-control" ngModel name="City" type="text" placeholder="Enter Name Of City">
+            <button class="btn btn-success ml-1" name="button"><i class="fa fa-question-circle"></i>  Search</button>
+           </div>
+       </div>
+     </form>
+     <div class="clearfix forecastweatherMain" *ngIf = "cityForecast?.length>0">
+       <div class="d-block p-2 bg-success text-white mb-2">
+         Showing the weather reports of {{cityName}}, {{countryCode}}
+       </div>
+       <div class="day card card-body mr-2 mb-2" *ngFor="let day of cityForecast">
+           <h4>{{day.day | date: 'MMMM d, y'}}</h4>
+           <div class="icon">
+            <img src="{{'http://openweathermap.org/img/w/'+day.icon+'.png'}}">
+           </div>
+           <div class="temp">
+             <h3>Temp:{{day.temp}}&deg;</h3>
+            <h4>Max:{{day.tempMax}}&deg;</h4>
+            <h4>Min:{{day.tempMin}}&deg;</h4>
+           </div>
+       </div>
+    </div>
+  </div>
+</div>
