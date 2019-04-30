@@ -11,7 +11,7 @@
     "deploy": "gh-pages -d src"
   },
   "private": true,
-  "homepage": "https://github.com/jagarapusrinivasarao/weatherapplication",
+  "homepage": "https://jagarapusrinivasarao.github.io/weatherapplication/",
   "dependencies": {
     "@angular/animations": "^6.0.3",
     "@angular/common": "^6.0.3",
